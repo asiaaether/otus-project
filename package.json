@@ -1,0 +1,19 @@
+{
+  "name": "otus-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@playwright/test": "^1.36.2",
+    "cypress": "^12.17.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
