@@ -1,4 +1,4 @@
-import MenuElement from "../elements/MenuElement"
+import MenuElement from "../elements/MenuElements"
 
 const MainPage = {
     visit () {
@@ -8,3 +8,5 @@ const MainPage = {
         return MenuElement;
     }
 }
+
+export default MainPage
