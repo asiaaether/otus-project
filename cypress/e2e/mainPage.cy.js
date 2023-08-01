@@ -6,6 +6,7 @@ import TasksElements from '../../framework/elements/TasksElements.js'
 
 describe('Авторизация', () => {
     let task
+    let projectName
     beforeEach(() => {
         LoginPage.visit()
         LoginPage.login(config.credentials.user)
@@ -13,6 +14,7 @@ describe('Авторизация', () => {
         cy.wait(5000)
 
         task = Math.random().toString()
+        projectName = Math.random().toString()
     })
 
     it('Проверка меню', () => {
@@ -20,11 +22,16 @@ describe('Авторизация', () => {
     })
 
     it('Добавление задачи', () => {
+        TasksElements.addNewProject(projectName)
         TasksElements.addNewTask(task)
         TasksElements.getList().contains(task)
     })
 
-    it.only('Завершение задачи', () => {
-        console.log("CONSOLE", TasksElements.getList())
+    it('Завершение задачи', () => {
+        TasksElements.addNewProject(projectName)
+        TasksElements.addNewTask(task)
+        TasksElements.completeTask(task)
+        TasksElements.getList().not().contains(task)
     })
+
 })
