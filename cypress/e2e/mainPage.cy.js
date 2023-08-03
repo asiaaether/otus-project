@@ -3,8 +3,10 @@ import LoginPage from '../../framework/pages/LoginPage.js'
 import MainPage from '../../framework/pages/MainPage.js'
 import MenuElement from '../../framework/elements/MenuElements.js'
 import TasksElements from '../../framework/elements/TasksElements.js'
+import ProjectPage from '../../framework/pages/ProjectPage.js'
+import ProjectElements from '../../framework/elements/ProjectElements.js'
 
-describe('Авторизация', () => {
+describe('Главная страница', () => {
     let task
     let projectName
     beforeEach(() => {
@@ -22,13 +24,13 @@ describe('Авторизация', () => {
     })
 
     it('Добавление задачи', () => {
-        TasksElements.addNewProject(projectName)
+        ProjectElements.addNewProject(projectName)
         TasksElements.addNewTask(task)
         TasksElements.getList().contains(task)
     })
 
     it('Завершение задачи', () => {
-        TasksElements.addNewProject(projectName)
+        ProjectElements.addNewProject(projectName)
         TasksElements.addNewTask(task)
         TasksElements.completeTask(task)
         TasksElements.getList().not().contains(task)
