@@ -9,7 +9,7 @@ describe('Проекты', () => {
         LoginPage.visit()
         LoginPage.login(config.credentials.user)
         ProjectPage.visit()
-        cy.wait(5000)
+        cy.wait('@ProjectPage')
 
         projectName = Math.random().toString()
     })
@@ -25,7 +25,7 @@ describe('Проекты', () => {
         ProjectPage.visit()
         ProjectElements.deleteProjectByName(projectName)
         ProjectPage.visit()
-        cy.wait(5000)
+        cy.wait('@ProjectPage')
         ProjectElements.getList().contains(projectName).should('not.exist')
     })
 

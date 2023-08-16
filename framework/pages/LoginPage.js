@@ -1,13 +1,14 @@
 const LoginPage = {
     visit () {
+        cy.intercept('https://try.vikunja.io/login').as('LoginPage')
         cy.visit('https://try.vikunja.io/login')
         cy.contains('Войти')
     },
-    fillUsername (username) {
-        if (username) {cy.get('#username').type(username)}
+    fillUsername (username = '') {
+        cy.get('#username').type(username)
     },
-    fillPassword (password) {
-        if (password) {cy.get('#password').type(password)}
+    fillPassword (password = '') {
+        cy.get('#password').type(password)
     },
     submitForm () {
         cy.get('button').contains('Войти').click()

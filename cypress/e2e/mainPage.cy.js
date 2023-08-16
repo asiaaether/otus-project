@@ -13,7 +13,7 @@ describe('Главная страница', () => {
         LoginPage.visit()
         LoginPage.login(config.credentials.user)
         MainPage.visit()
-        cy.wait(5000)
+        cy.wait('@MainPage')
 
         task = Math.random().toString()
         projectName = Math.random().toString()
