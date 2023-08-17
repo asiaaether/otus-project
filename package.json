@@ -23,7 +23,6 @@
     "@babel/cli": "^7.22.9",
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
-    "@playwright/test": "^1.36.2",
     "@shelex/cypress-allure-plugin": "^2.40.0",
     "allure-commandline": "^2.23.1",
     "cypress": "^12.17.2",
